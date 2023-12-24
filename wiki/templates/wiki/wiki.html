@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load wiki_tags %}
+<!-- Define the title of the page -->
+{% block title %}Home{% endblock %}
+<!-- Define the content of the page -->
+{% block content %}
+    {% if article %}
+        <h1>{{ article.title }}</h1>
+        <p>{{ article.content }}</p>
+        <p>{{ article.date }}</p>
+    {% else %}
+        <h1>{{ url_title|unslugify }}</h1>
+        <p>There is no article named "{{ url_title|unslugify }}".</p>
+        <!-- Link to the edit page -->
+        <a href="{% url 'edit' url_title %}">Create it now</a>
+    {% endif %}
+{% endblock %}

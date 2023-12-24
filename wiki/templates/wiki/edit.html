@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>{{ article.title }}</h1>
+    <!-- text area for editing the article content -->
+    <label for="editor"></label><textarea id="editor" name="content" rows="10" cols="80">
+        {{ article.content }}
+    </textarea>
+    
+    <!-- Save button -->
+    
+{% endblock %}
